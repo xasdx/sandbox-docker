@@ -1,5 +1,5 @@
 let express = require("express")
-let redis = require("redis").createClient()
+let redis = require("redis").createClient({ host: "redis" })
 let app = express()
 
 redis.set("counter", 0)
