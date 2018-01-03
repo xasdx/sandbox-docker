@@ -1,7 +1,16 @@
 let express = require("express")
+let redis = require("redis").createClient()
 let app = express()
 
-app.get("/", (req, res) => res.send("hello"))
+redis.set("counter", 0)
+
+app.get("/", (req, res) => {
+  redis.get("counter", (err, value) => {
+    let counter = parseInt(value)
+    redis.set("counter", counter + 1)
+    res.send(`counter is at ${counter}`)
+  })
+})
 
 let port = process.env.PORT || 8080
 

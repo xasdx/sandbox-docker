@@ -2,9 +2,12 @@
   "name": "sandbox-docker",
   "version": "1.0.0",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "ava -v"
   },
   "dependencies": {
-    "express": "^4.16.2"
+    "ava": "^0.24.0",
+    "express": "^4.16.2",
+    "redis": "^2.8.0"
   }
 }
