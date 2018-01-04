@@ -1,6 +1,7 @@
 web:
   build: .
   dockerfile: Dockerfile
+  command: npm start
   links:
     - redis
   ports:

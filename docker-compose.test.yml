@@ -1,6 +1,7 @@
 sut:
   build: .
   dockerfile: Dockerfile.test
+  command: npm test
   links:
     - web
 web:
